@@ -1,0 +1,305 @@
+/* ======================
+   FONTS
+====================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+@font-face {
+    font-family: "Raleway";
+    src:
+        url("../fonts/Raleway-Regular.woff") format("woff"),
+        url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+
+/* ======================
+   RESET / GLOBAL
+====================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.45;
+    background: #ffffff;
+}
+
+/* Titres */
+h1, h2, h3, h4 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+/* ======================
+   STRUCTURE PAGE
+====================== */
+.page {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.side {
+    width: 150px;
+    background-color: #f5f5f5;
+    flex-shrink: 0;
+}
+
+.cv {
+    width: 1160px;
+    background-color: #ffffff;
+}
+
+/* ======================
+   HEADER
+====================== */
+.header {
+    display: flex;
+    align-items: center;
+    height: 240px;
+    padding: 0 50px;
+    background-color: #17abb3;
+    color: #ffffff;
+}
+
+.photo {
+    flex: 0 0 180px;
+}
+
+.photo img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+.identity {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.identity h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+.identity h2 {
+    margin: 8px 0 18px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* Infos header */
+.infos {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 40px;
+    row-gap: 10px;
+    justify-content: center;
+    font-size: 14px;
+    text-align: left;
+}
+
+.infos a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ======================
+   CONTENT
+====================== */
+.content {
+    display: flex;
+}
+
+/* ======================
+   COLONNE GAUCHE
+====================== */
+.left {
+    width: 320px;
+    background-color: #e3e3e3;
+    padding: 35px 30px;
+}
+
+.left section {
+    margin-bottom: 38px;
+}
+
+.left h3 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    color: #17abb3;
+    border-bottom: 1px solid #33333320;
+    padding-bottom: 6px;
+}
+
+/* Compétences & Langues : sans puces */
+.skills,
+.languages {
+    list-style: none;
+    padding-left: 0;
+}
+
+.languages li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.languages .lang {
+    font-weight: 700; /* langue en gras */
+}
+
+.languages .level {
+    margin-left: auto;   /* pousse à droite */
+    min-width: 140px;    /* alignement parfait */
+    text-align: right;   /* texte aligné à droite */
+    white-space: nowrap;
+    font-weight: 400;    /* niveau non gras */
+}
+
+
+.skills li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.skills span {
+    letter-spacing: 2px;
+    color: #17abb3;
+}
+
+/* Qualités / centres d’intérêt */
+.square {
+    padding-left: 0;
+}
+
+.square li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.square li::before {
+    content: "■";
+    color: #17abb3;
+    margin-right: 10px;
+}
+
+/* ======================
+   COLONNE DROITE
+====================== */
+.right {
+    width: calc(100% - 320px);
+    padding: 35px 40px;
+}
+
+.right section {
+    margin-bottom: 18px;
+}
+
+.right h3 {
+    margin: 0 0 18px;
+    font-size: 24px;
+    color: #17abb3;
+    border-bottom: 1px solid #33333320;
+    padding-bottom: 6px;
+}
+
+/* Profil */
+.profil {
+    margin: 0;
+    text-align: justify;
+    text-indent: 42px;
+}
+
+/* ======================
+   ITEMS
+====================== */
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 14px 14px 22px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.item div {
+    max-width: 75%;
+}
+
+/* Titres + texte */
+.right .item-text h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.right .item-text p {
+    margin: 2px 0 0;
+    font-style: italic;
+}
+
+/* Durées */
+.right .item time,
+.item span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #17abb3;
+    white-space: nowrap;
+}
+
+/* Effet hover */
+.item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* Effet hover – colonne droite */
+.right .item:hover {
+    background-color: #f5f5f5; /* gris clair */
+}
+
+
+.item:hover::before {
+    background-color: #17abb3;
+}
+
+/* ======================
+   FOOTER
+====================== */
+.footer {
+    background-color: #17abb3;
+    color: #ffffff;
+    text-align: center;
+    padding: 26px 0 22px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    margin-bottom: 10px;
+}
+
+.socials img {
+    width: 28px;
+    transition: opacity 0.25s ease;
+}
+
+.socials img:hover {
+    opacity: 0.6;
+}
