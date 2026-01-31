@@ -20,13 +20,12 @@
 body {
     margin: 0;
     font-family: "Raleway", sans-serif;
-    font-size: 15px;
-    color: #333333;
+    font-size: 1.2rem;
     line-height: 1.45;
-    background: #ffffff;
+    color: #333;
+    background: #fff;
 }
 
-/* Titres */
 h1, h2, h3, h4 {
     font-family: "Lato", sans-serif;
     font-weight: 700;
@@ -43,13 +42,12 @@ h1, h2, h3, h4 {
 
 .side {
     width: 150px;
-    background-color: #f5f5f5;
-    flex-shrink: 0;
+    background: #f5f5f5;
 }
 
 .cv {
     width: 1160px;
-    background-color: #ffffff;
+    background: #fff;
 }
 
 /* ======================
@@ -60,8 +58,8 @@ h1, h2, h3, h4 {
     align-items: center;
     height: 240px;
     padding: 0 50px;
-    background-color: #17abb3;
-    color: #ffffff;
+    background: #17abb3;
+    color: #fff;
 }
 
 .photo {
@@ -72,18 +70,15 @@ h1, h2, h3, h4 {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 6px solid #ffffff;
+    border: 6px solid #fff;
     object-fit: cover;
     cursor: zoom-in;
 }
 
 .identity {
     margin-left: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     flex: 1;
+    text-align: center;
 }
 
 .identity h1 {
@@ -93,23 +88,20 @@ h1, h2, h3, h4 {
 
 .identity h2 {
     margin: 8px 0 18px;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 300;
 }
 
-/* Infos header */
 .infos {
     display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 40px;
-    row-gap: 10px;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px 40px;
     justify-content: center;
-    font-size: 14px;
-    text-align: left;
+    font-size: 1rem;
 }
 
 .infos a {
-    color: #ffffff;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -125,8 +117,8 @@ h1, h2, h3, h4 {
 ====================== */
 .left {
     width: 320px;
-    background-color: #e3e3e3;
     padding: 35px 30px;
+    background: #e3e3e3;
 }
 
 .left section {
@@ -135,37 +127,21 @@ h1, h2, h3, h4 {
 
 .left h3 {
     margin: 0 0 16px;
-    font-size: 22px;
+    font-size: 1.5rem;
     color: #17abb3;
     border-bottom: 1px solid #33333320;
     padding-bottom: 6px;
 }
 
-/* Compétences & Langues : sans puces */
+/* Listes sans puces */
 .skills,
 .languages {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
-.languages li {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.languages .lang {
-    font-weight: 700; /* langue en gras */
-}
-
-.languages .level {
-    margin-left: auto;   /* pousse à droite */
-    min-width: 140px;    /* alignement parfait */
-    text-align: right;   /* texte aligné à droite */
-    white-space: nowrap;
-    font-weight: 400;    /* niveau non gras */
-}
-
-
+/* Compétences */
 .skills li {
     display: flex;
     justify-content: space-between;
@@ -178,20 +154,37 @@ h1, h2, h3, h4 {
     color: #17abb3;
 }
 
-/* Qualités / centres d’intérêt */
+/* Langues */
+.languages li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.languages .lang {
+    font-weight: 700;
+}
+
+.languages .level {
+    margin-left: auto;
+    min-width: 140px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Listes avec carrés */
 .square {
-    padding-left: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .square li {
-    list-style: none;
     margin-bottom: 8px;
 }
 
 .square li::before {
     content: "■";
-    color: #17abb3;
     margin-right: 10px;
+    color: #17abb3;
 }
 
 /* ======================
@@ -208,13 +201,12 @@ h1, h2, h3, h4 {
 
 .right h3 {
     margin: 0 0 18px;
-    font-size: 24px;
+    font-size: 1.2rem;
     color: #17abb3;
     border-bottom: 1px solid #33333320;
     padding-bottom: 6px;
 }
 
-/* Profil */
 .profil {
     margin: 0;
     text-align: justify;
@@ -237,20 +229,7 @@ h1, h2, h3, h4 {
     max-width: 75%;
 }
 
-/* Titres + texte */
-.right .item-text h4 {
-    margin: 0;
-    font-size: 16px;
-}
-
-.right .item-text p {
-    margin: 2px 0 0;
-    font-style: italic;
-}
-
-/* Durées */
-.right .item time,
-.item span {
+.item time {
     font-size: 16px;
     font-weight: 600;
     color: #17abb3;
@@ -261,31 +240,27 @@ h1, h2, h3, h4 {
 .item::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0 auto 0 0;
     width: 4px;
-    height: 100%;
-    background-color: transparent;
+    background: transparent;
 }
 
-/* Effet hover – colonne droite */
 .right .item:hover {
-    background-color: #f5f5f5; /* gris clair */
+    background: #f5f5f5;
 }
-
 
 .item:hover::before {
-    background-color: #17abb3;
+    background: #17abb3;
 }
 
 /* ======================
    FOOTER
 ====================== */
 .footer {
-    background-color: #17abb3;
-    color: #ffffff;
-    text-align: center;
     padding: 26px 0 22px;
+    text-align: center;
+    background: #17abb3;
+    color: #fff;
 }
 
 .socials {
@@ -297,7 +272,7 @@ h1, h2, h3, h4 {
 
 .socials img {
     width: 28px;
-    transition: opacity 0.25s ease;
+    transition: opacity 0.25s;
 }
 
 .socials img:hover {
